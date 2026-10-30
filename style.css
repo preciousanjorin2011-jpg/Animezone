@@ -1,0 +1,214 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+body,
+button,
+input,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button,
+input,
+.card,
+.card img {
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ff8a95;
+    outline-offset: 3px;
+}
+
+.navbar-brand {
+    color: #ff4757 !important;
+    font-size: 25px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #17152d, #5631a8);
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: rise-in 0.65s ease-out both;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    animation: rise-in 0.65s 0.1s ease-out both;
+}
+
+.hero .btn {
+    animation: rise-in 0.65s 0.2s ease-out both;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(23, 21, 45, 0.16);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.card:hover img {
+    transform: scale(1.035);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #6c3ce9;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4b25ad;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(75, 37, 173, 0.25);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+#anime .search-wrap {
+    position: relative;
+    max-width: 620px;
+    margin: 0 auto 1.5rem;
+}
+
+#searchBox {
+    width: 100%;
+    min-height: 54px;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    border: 1px solid #dedbe8;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #242137;
+    font: inherit;
+    box-shadow: 0 4px 14px rgba(23, 21, 45, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#searchBox::placeholder {
+    color: #858195;
+}
+
+#searchBox:focus {
+    border-color: #6c3ce9;
+    box-shadow: 0 0 0 4px rgba(108, 60, 233, 0.14);
+}
+
+#searchBox:focus-visible {
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 20px;
+    height: 20px;
+    color: #777188;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+#animeList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1.5rem;
+}
+
+.anime-card {
+    min-width: 0;
+}
+
+.about {
+    background-color: #e9e5f7;
+}
+
+footer {
+    background-color: #17152d;
+    color: white;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero {
+        padding: 70px 15px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
